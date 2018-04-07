@@ -1,3 +1,5 @@
-# ruby-jenkins-slave-docker
+# jenkins-slave-ruby
 
-[![](https://images.microbadger.com/badges/image/johnmccabe/ruby-jenkins-slave.svg)](https://microbadger.com/images/johnmccabe/ruby-jenkins-slave "Get your own image badge on microbadger.com")
+This is the SSH Jenkins slave with `rbenv` and Ruby installed. 
+
+Based on the work of [uudashr](https://github.com/uudashr/jenkins-ssh-slave-docker).
