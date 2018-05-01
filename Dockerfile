@@ -51,6 +51,8 @@ RUN apt-get -q update && \
     su - jenkins -c 'gem install bundler' && \
     su - jenkins -c 'ln -s /home/jenkins/.rbenv/versions/2.4.4 /home/jenkins/.rbenv/versions/2.4' && \
     su - jenkins -c 'mkdir -p ~/.aws' && \
+    su - jenkins -c 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash' && \
+    su - jenkins -c 'npm install -g yarn' && \
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
 EXPOSE 22
