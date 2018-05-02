@@ -29,6 +29,7 @@ ADD setup-sshd /usr/local/bin/setup-sshd
 RUN chmod a+x /usr/local/bin/setup-sshd
 
 ADD .ruby.bashrc /home/jenkins/.ruby.bashrc
+ADD .node.bashrc /home/jenkins/.node.bashrc
 
 RUN apt-get -q update && \
     DEBIAN_FRONTEND="noninteractive" apt-get -q install -y \
@@ -53,6 +54,7 @@ RUN apt-get -q update && \
     su - jenkins -c 'ln -s /home/jenkins/.rbenv/versions/2.4.4 /home/jenkins/.rbenv/versions/2.4' && \
     su - jenkins -c 'mkdir -p ~/.aws' && \
     su - jenkins -c 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash' && \
+    su - jenkins -c 'nvm install 6.10.1' && \
     su - jenkins -c 'npm install -g yarn' && \
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
